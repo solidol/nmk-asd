@@ -13,12 +13,20 @@
 			font-size: 14pt;
 		}
 		body{
-			padding-left: 10%;
-			padding-right: 10%;
+			padding-left: 0;
+			padding-right: 0;
 		}
 		.paper{
+			background-color: #cbe3ca;
+			padding: 10px;
 			max-width: 210mm;
 			min-width: 300px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.paper p, li{
+			text-align: justify;
+			text-indent: 1cm;
 		}
 		#colontitle{
 			color: grey;
@@ -58,3 +66,20 @@
 		figcaption{
 			text-align: center;
 		}
+		figure.figure-float-left{
+			max-width: 250px;
+			float: left;
+			margin: 30px;
+		}
+		.clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+		.clearfix { display: inline-block; }
+		/* start commented backslash hack \*/
+		* html .clearfix { height: 1%; }
+		.clearfix { display: block; }
