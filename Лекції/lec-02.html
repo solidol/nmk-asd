@@ -10,6 +10,269 @@
 	<div class="paper">
 		<div id="colontitle">Лекція № 2</div>
 		<h1>Основні структури даних</h1>
-	</div>
+		<h1 class="title toc-ignore">Лекція 3. Типи та структури даних</h1>
+
+
+
+
+
+<p>
+ Перший етап будь-якого аналізу даних – це створення набору даних, у якому міститься інформація для вивчення, у потрібному форматі. В R ця задача розподіляється на такі підзадачі:
+</p>
+
+<ul>
+<li>вибір типу даних;</li>
+<li>введення даних в обраному форматі.</li>
+</ul>
+<p>
+ Поточна та наступна за нею лекції містять опис базових типів даних, що використовуються в R, а саме вектори, фактори, матриці, масиви даних, таблиці даних і списки. Ця лекція присвячена типам даних вектори, фактори та матриці. Дані можна вводити або вручну, або з зовнішнього джерела. Таким джерелом можуть бути текстові файли, електронні таблиці, статистичні програми й системи управління базами даних.
+</p>
+
+
+<h2>Що таке набір даних?</h2>
+<p>
+ Набір даних – це, як правило, прямокутний масив даних, у якому рядки відповідають спостереженням, а стовпці – ознакам. <strong>У табл. 2.1</strong> представлений гіпотетичний набір даних про пацієнтів. Представники різних професій по-різному називають рядки і стовпці в наборі даних. Статистики називають їх спостереженнями (observation) і змінними (variable), аналітики, які працюють із базами даних, говорять про записи (record) і поля (field), а ті, хто працює в області знаходження в даних прихованої інформації (data mining) і машинного навчання (machine learning), називають їх зразки (example) і властивості (attribute). Впродовж цього курсу ми будемо використовувати терміни спостереження і змінна.
+</p>
+
+<p>
+ Потрібно розрізняти структуру набору даних (в даному випадку – прямокутний масив даних) і типи даних, які його складають. У наборі даних, що наведений в <strong>табл. 2.1</strong>, <code>PatientID</code> – це назва рядка або спостереження, <code>AdmDate</code> – змінна у форматі дати, <code>Age</code> – неперервна (або кількісна – continuous) змінна, <code>Diabetes</code> – номінальна (nominal) змінна і <code>Status</code> – це порядкова (ordered) змінна. <strong>Таблиця 2.1</strong> буде прочитана в R як таблиця даних. Така велика різноманітність підтримуваних структур дає мові R велику гнучкість у роботі з даними. Типи даних в R бувають числовими (numeric), текстовими (character), логічними (TRUE/FALSE, правда/брехня), комплексними (уявне число) і необробленими (байти). Змінні <code>PatientID</code>, <code>AdmDate</code> і <code>Age</code> будуть прочитані R як числові, а <code>Diabetes</code> і <code>Status</code> – як текстові. Ще вам потрібно буде «повідомити» програмі, що <code>PatientID</code> – це назви спостережень, що в <code>AdmDate</code> записані дати й що <code>Diabetes</code> і <code>Status</code> – це номінальна й порядкова змінні відповідно. В R імена рядків називаються <code>rownames</code>, а категоріальні (номінальні й порядкові) змінні – <code>factor</code> (фактор). Далі ми розглянемо все послідовно.
+</p>
+
+
+
+<h2>Структури даних</h2>
+<p>
+ R працює з різними структурами даних, включно з скалярами, векторами, матрицями, масивами даних, таблицями даних і списками. Вони відрізняються типами даних, способом створення, складністю пристрою, а також способом позначати і витягувати їхні окремі елементи. Ці структури даних схематично зображено на рис. 3.1.
+</p>
+
+<center>
+<div class="figure">
+
+<p class="caption"><strong>Рисунок 3.1</strong> - Типи структури даних в R
+</p>
+
+</div>
+</center>
+
+<p>
+ Є кілька властивих тільки R термінів, які бентежать нових користувачів. В R об’єктом (object) називається все, що може бути представлено у вигляді змінних, констант, різних типів даних, функцій й діаграм. В об’єктів є вид (визначає, у якому вигляді об’єкт зберігається в пам’яті) і клас (який вказує загальних функцій типу <code>print</code>, як із ним звертатися).
+</p>
+
+<p>
+ Таблиця даних (data frame) – це тип структури даних в R, аналогічний тому виду, у якому зберігаються дані у звичайних статистичних програмах (наприклад, в SAS, SPSS та STATA). Стовпці – це змінні, а рядки – це спостереження. В одній таблиці даних можуть міститися змінні різних типів (наприклад, числові й текстові). Таблиці даних – це основний тип структури даних.
+</p>
+
+<p>
+ Фактори – це номінальні або порядкові змінні. В R вони зберігаються й обробляються особливим чином.
+</p>
+
+<p>
+ Далі розглянемо всі типи структури даних послідовно, починаючи з векторів.
+</p>
+
+
+<h3>Вектори</h3>
+<p>
+ Вектори (vector) – це одномірні масиви даних, які можуть містити числові, текстові або логічні значення. Для створення вектора застосовується функція об’єднання <code>c()</code>. Нижче наведено приклади векторів кожного типу:
+</p>
+
+
+<pre class="r"><code class="hljs">a &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, -<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+b &lt;- c(<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>)
+c &lt;- c(<span class="hljs-literal">TRUE</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-literal">FALSE</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-literal">FALSE</span>)</code></pre>
+
+<p>
+ Тут <code>a</code> – числовий вектор, <code>b</code> – текстовий вектор, <code>c</code> – логічний вектор. Зверніть увагу на те, що всі елементи вектора повинні бути одного типу (числові, текстові або логічні). Не можна змішувати дані різних типів в одному векторі. Скаляри – це вектори, що складаються з одного елемента, наприклад, <code>f &lt;- 3</code>, <code>g &lt;- "US"</code> і <code>h &lt;- TRUE</code>. Вони використовуються для позначення констант.
+</p>
+
+<p>
+ Окремі елементи вектора можна викликати з допомогою числового вектора, що складається з номерів елементів і укладеного у квадратні дужки. Наприклад, <code>a[c(2, 4)]</code> позначає другий і четвертий елементи вектора <code>a</code>. Ось ще приклади:
+</p>
+
+
+<pre class="r"><code class="hljs">A &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, -<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+A[<span class="hljs-number">3</span>]</code></pre>
+
+<pre><code class="hljs">[1] 5</code></pre>
+
+<pre class="r"><code class="hljs">A[c(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>)]</code></pre>
+
+<pre><code class="hljs">[1] 1 5 6</code></pre>
+
+<pre class="r"><code class="hljs">A[<span class="hljs-number">2</span>:<span class="hljs-number">6</span>]</code></pre>
+
+<pre><code class="hljs">[1]  2  5  3  6 -2</code></pre>
+
+<p>
+ Знак двокрапки в останньому прикладі використаний для створення послідовності чисел. Наприклад, <code>a &lt;- c(2:6)</code> – це те ж саме, що <code>a &lt;- c(2, 3, 4, 5, 6)</code>.
+</p>
+
+
+
+<h3>Матриці</h3>
+<p>
+ Матриця (matrix) – це двовимірний масив даних, у якому кожен елемент має однаковий тип (числовий, текстовий або логічний). Матриці створюють з допомогою функції <code>matrix()</code>. Загальний формат такий:
+</p>
+
+<pre class="r"><code class="hljs">mymatrix &lt;- matrix(vector, nrow=число_рядків, ncol=число_стовпців,</code></pre>
+
+<pre><code class="hljs">Error: unexpected input in "mymatrix &lt;- matrix(vector, nrow=\"</code></pre>
+
+<p>
+ де <code>vector</code> містить елементи матриці; <code>nrow</code> і <code>ncol</code> визначають число рядків і стовпців у матриці; <code>dimnames</code> містить назви рядків і стовпців (їх вказувати не обов’язково), які зберігаються у вигляді текстових векторів; параметр <code>byrow</code> визначає, як повинна заповнюватися матриця – за рядками (<code>byrow=TRUE</code>) або за стовпцями (<code>byrow=FALSE</code>). За замовчуванням матриця заповнюється за стовпцями. Наведений нижче програмний код ілюструє застосування функції matrix.
+</p>
+
+<pre class="r"><code class="hljs">Y &lt;- matrix(<span class="hljs-number">1</span>:<span class="hljs-number">20</span>, nrow=<span class="hljs-number">5</span>, ncol=<span class="hljs-number">4</span>)
+Y</code></pre>
+
+<pre><code class="hljs">     [,1] [,2] [,3] [,4]
+[1,]    1    6   11   16
+[2,]    2    7   12   17
+[3,]    3    8   13   18
+[4,]    4    9   14   19
+[5,]    5   10   15   20</code></pre>
+
+<pre class="r"><code class="hljs">cells &lt;- c(<span class="hljs-number">1</span>,<span class="hljs-number">26</span>,<span class="hljs-number">24</span>,<span class="hljs-number">68</span>)
+rnames &lt;- c(<span class="hljs-string">"R1"</span>, <span class="hljs-string">"R2"</span>)
+cnames &lt;- c(<span class="hljs-string">"C1"</span>, <span class="hljs-string">"C2"</span>)</code></pre>
+
+<pre class="r"><code class="hljs">mymatrix &lt;- matrix(cells, nrow=<span class="hljs-number">2</span>, ncol=<span class="hljs-number">2</span>, byrow=<span class="hljs-literal">TRUE</span>,
+                    dimnames=list(rnames, cnames))
+mymatrix</code></pre>
+
+<pre><code class="hljs">   C1 C2
+R1  1 26
+R2 24 68</code></pre>
+
+<pre class="r"><code class="hljs">mymatrix &lt;- matrix(cells, nrow=<span class="hljs-number">2</span>, ncol=<span class="hljs-number">2</span>, byrow=<span class="hljs-literal">FALSE</span>,
+                   dimnames=list(rnames, cnames))
+mymatrix</code></pre>
+
+<pre><code class="hljs">   C1 C2
+R1  1 24
+R2 26 68</code></pre>
+
+<p>
+ Спочатку ви створюєте матрицю <code>5×4</code>. Потім ви робите матрицю <code>2×2</code> з назвами рядків і стовпців та заповнюєте її за рядками. Нарешті, ви створюєте матрицю <code>2×2</code> і заповнюєте її за стовпцями.
+</p>
+
+<p>
+ Ви можете позначати рядки, стовпці й елементи матриці з допомогою індексів і квадратних дужок. Наприклад, <code>X[i,]</code> позначає <em>i</em>-й рядок матриці <code>X</code>, <code>X[, j]</code> – позначає її <em>j</em>-ий стовпець, а <code>X[i, j]</code> відповідає елементу цієї матриці, розташованому на перетині цього рядка й цього стовпчика. У якості індексів <code>i</code> та <code>j</code> можна використовувати числові вектори, щоби позначити відразу кілька рядків або стовпців, як це показано нижче.
+</p>
+
+<pre class="r"><code class="hljs">X &lt;- matrix(<span class="hljs-number">1</span>:<span class="hljs-number">10</span>, nrow=<span class="hljs-number">2</span>)
+X</code></pre>
+
+<pre><code class="hljs">     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    3    5    7    9
+[2,]    2    4    6    8   10</code></pre>
+
+<pre class="r"><code class="hljs">X[<span class="hljs-number">2</span>,]</code></pre>
+
+<pre><code class="hljs">[1]  2  4  6  8 10</code></pre>
+
+<pre class="r"><code class="hljs">X[, <span class="hljs-number">2</span>]</code></pre>
+
+<pre><code class="hljs">[1] 3 4</code></pre>
+
+<pre class="r"><code class="hljs">X[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]</code></pre>
+
+<pre><code class="hljs">[1] 7</code></pre>
+
+<pre class="r"><code class="hljs">X[<span class="hljs-number">1</span>, c(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)]</code></pre>
+
+<pre><code class="hljs">[1] 7 9</code></pre>
+
+<p>
+ Спочатку створено матрицю <code>2×5</code>, що містить цифри від 1 до 10. За замовчуванням матриця заповнена цифрами за стовпцями. Потім обрано всі елементи в другому рядку, а далі – усі елементи в другому стовпці. Потім обрано елемент, який розташовується в першому рядку й у четвертому стовпці. Нарешті, обрано елементи першого рядка, які містяться в четвертому і п’ятому стовпчиках.
+</p>
+
+<p>
+ Матриці мають два виміри і, як і вектори, можуть складатися тільки з одного типу даних. Якщо є більше за два виміри, потрібно використовувати масиви даних. Дані різних типів можна зберігати в таблицях.
+</p>
+
+
+<h3>Масиви даних</h3>
+<p>
+ Масиви даних (array) схожі з матрицями, але можуть мати понад два виміри. Масиви даних створюються з допомогою функції <code>array()</code> за таким зразком:
+</p>
+
+
+<pre class="r"><code class="hljs">myarray &lt;- array(vector, dimensions, dimnames)</code></pre>
+
+<p>
+де <code>vector</code> містить лише дані; <code>dimensions</code> – це числовий вектор із зазначенням розмірності для кожного вимірювання; <code>dimnames</code> – це необов’язковий список назв вимірювань. Нижче в якості прикладу представлений програмний код, з допомогою якого створено тривимірний (<code>2×3×4</code>) масив чисел.
+</p>
+
+
+<pre class="r"><code class="hljs">dim1 &lt;- c(<span class="hljs-string">"A1"</span>, <span class="hljs-string">"A2"</span>)
+dim2 &lt;- c(<span class="hljs-string">"B1"</span>, <span class="hljs-string">"B2"</span>, <span class="hljs-string">"B3"</span>)
+dim3 &lt;- c(<span class="hljs-string">"C1"</span>, <span class="hljs-string">"C2"</span>, <span class="hljs-string">"C3"</span>, <span class="hljs-string">"C4"</span>)
+z &lt;- array(<span class="hljs-number">1</span>:<span class="hljs-number">24</span>, c(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>), dimnames=list(dim1, dim2, dim3))
+z</code></pre>
+
+<pre><code class="hljs">, , C1
+
+   B1 B2 B3
+A1  1  3  5
+A2  2  4  6
+
+, , C2
+
+   B1 B2 B3
+A1  7  9 11
+A2  8 10 12
+
+, , C3
+
+   B1 B2 B3
+A1 13 15 17
+A2 14 16 18
+
+, , C4
+
+   B1 B2 B3
+A1 19 21 23
+A2 20 22 24</code></pre>
+
+<p>
+ Очевидно, що масиви даних – це просто розширені матриці. Вони можуть бути корисні у разі створення програм для реалізації нових статистичних методів. Як і в матрицях, усі елементи масиву даних повинні мати однаковий тип. Система позначення елементів тут така ж, як для матриць. У наведеному вище прикладі елемент <code>z[1,2,3]</code> – це 15.
+</p>
+
+
+<h3>Таблиці даних</h3>
+<p>
+ Таблиця даних (data frame) – це більш широко використовуваний у порівнянні з матрицею об’єкт, оскільки різні стовпці можуть містити різні типи даних (числовий, текстовий та ін.). Таблиця даних – найбільш часто використовувана структура даних в R. Набір даних про пацієнтів (<strong>табл. 2.1</strong>) складається з числових і текстових даних. Ці дані потрібно представити у вигляді таблиці даних, а не матриці, оскільки таблиця містить у собі дані різних типів. Таблиця даних створюється з допомогою функції <code>data.frame()</code>:
+</p>
+
+
+<pre class="r"><code class="hljs">mydata &lt;- data.frame(col1, col2, col3, <span class="hljs-keyword">...</span>)</code></pre>
+
+<p>
+де <code>col1, col2, col3, ...</code> – це вектори будь-якого типу (текстового, числового або логічного), які стануть стовпцями таблиці. Назви кожному стовпчику можна оголосити з допомогою функції <code>names()</code>. Проілюструємо сказане на прикладі програмного коду.
+</p>
+
+
+<pre class="r"><code class="hljs">patientID &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+age &lt;- c(<span class="hljs-number">25</span>, <span class="hljs-number">34</span>, <span class="hljs-number">28</span>, <span class="hljs-number">52</span>)
+diabetes &lt;- c(<span class="hljs-string">"Type1"</span>, <span class="hljs-string">"Type2"</span>, <span class="hljs-string">"Type1"</span>, <span class="hljs-string">"Type1"</span>)
+status &lt;- c(<span class="hljs-string">"Poor"</span>, <span class="hljs-string">"Improved"</span>, <span class="hljs-string">"Excellent"</span>, <span class="hljs-string">"Poor"</span>)
+patientdata &lt;- data.frame(patientID, age, diabetes, status)
+patientdata</code></pre>
+
+<div data-pagedtable="true" pagedtable-page="0" class="pagedtable-wrapper">
+<script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["patientID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["diabetes"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["status"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"1","2":"25","3":"Type1","4":"Poor"},{"1":"2","2":"34","3":"Type2","4":"Improved"},{"1":"3","2":"28","3":"Type1","4":"Excellent"},{"1":"4","2":"52","3":"Type1","4":"Poor"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+<div class="pagedtable pagedtable-not-empty" style="opacity: 1;"><table style="visibility: hidden; position: absolute; white-space: nowrap; height: auto; width: auto;"><tr><td>ABCDEFGHIJ0123456789</td></tr></table><table class="table table-condensed" cellspacing="0"><thead><tr><th style="text-align: right; max-width: 81px; min-width: 81px;" align="right"><div class="pagedtable-header-name">patientID</div><div class="pagedtable-header-type">&lt;dbl&gt;</div></th><th style="text-align: right; max-width: 27px; min-width: 27px;" align="right"><div class="pagedtable-header-name">age</div><div class="pagedtable-header-type">&lt;dbl&gt;</div></th><th style="text-align: left; max-width: 72px; min-width: 72px;" align="left"><div class="pagedtable-header-name">diabetes</div><div class="pagedtable-header-type">&lt;fctr&gt;</div></th><th style="text-align: left; max-width: 81px; min-width: 81px;" align="left"><div class="pagedtable-header-name">status</div><div class="pagedtable-header-type">&lt;fctr&gt;</div></th><th class="pagedtable-padding-col"></th></tr></thead><tbody><tr class="odd"><td style="text-align: right; max-width: 81px; min-width: 81px;" align="right">1</td><td style="text-align: right; max-width: 27px; min-width: 27px;" align="right">25</td><td style="text-align: left; max-width: 72px; min-width: 72px;" align="left">Type1</td><td style="text-align: left; max-width: 81px; min-width: 81px;" align="left">Poor</td><td class="pagedtable-padding-col"></td></tr><tr class="even"><td style="text-align: right; max-width: 81px; min-width: 81px;" align="right">2</td><td style="text-align: right; max-width: 27px; min-width: 27px;" align="right">34</td><td style="text-align: left; max-width: 72px; min-width: 72px;" align="left">Type2</td><td style="text-align: left; max-width: 81px; min-width: 81px;" align="left">Improved</td><td class="pagedtable-padding-col"></td></tr><tr class="odd"><td style="text-align: right; max-width: 81px; min-width: 81px;" align="right">3</td><td style="text-align: right; max-width: 27px; min-width: 27px;" align="right">28</td><td style="text-align: left; max-width: 72px; min-width: 72px;" align="left">Type1</td><td style="text-align: left; max-width: 81px; min-width: 81px;" align="left">Excellent</td><td class="pagedtable-padding-col"></td></tr><tr class="even"><td style="text-align: right; max-width: 81px; min-width: 81px;" align="right">4</td><td style="text-align: right; max-width: 27px; min-width: 27px;" align="right">52</td><td style="text-align: left; max-width: 72px; min-width: 72px;" align="left">Type1</td><td style="text-align: left; max-width: 81px; min-width: 81px;" align="left">Poor</td><td class="pagedtable-padding-col"></td></tr></tbody></table><div class="pagedtable-footer"><div class="pagedtable-info" title="4 rows">4 rows</div></div></div></div>
+
+<p>
+ Кожен стовпець повинен містити дані тільки одного типу, водночас в одній таблиці даних можуть бути стовпчики з даними різного типу. Оскільки таблиці даних дуже близькі до того, що аналітики називають наборами даних, під час обговоренні таблиць даних ми будемо використовувати терміни стовпці та змінні в якості синонімів.
+</p>
+
+<p>
+ Існує кілька способів позначити елементи таблиці даних. Можна використовувати індекси, як ми робили це раніше (наприклад, для матриць), або можна вказувати номери стовпців.
+</p>
+
 </body>
 </html>
