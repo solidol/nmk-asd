@@ -9,7 +9,7 @@
 			font-size: 14pt;
 			font-weight: bold;
 		}
-		p, li{
+		p, li, figcaption{
 			font-size: 14pt;
 		}
 		body{
@@ -110,10 +110,21 @@
 		* html .clearfix { height: 1%; }
 		.clearfix { display: block; }
 
-ul{
-		list-style: '-';
-}
+		ul{
+			list-style: '-';
+		}
 		ul.lec-menu{
 			display: flex;
 			list-style: none; 
+		}
+		i.formula{
+			font-weight: 400;
+			font-size: 120%; 
+		}
+		i.formula sub, i.formula sup{
+			font-style: normal;
+		}
+
+		figcaption:before{
+			content: 'Рис. ';
 		}
