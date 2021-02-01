@@ -9,6 +9,7 @@
 			font-size: 14pt;
 			font-weight: bold;
 		}
+
 		p, li, figcaption{
 			font-size: 14pt;
 		}
@@ -127,4 +128,14 @@
 
 		figcaption:before{
 			content: 'Рис. ';
+		}
+		td{
+			border: 1px solid black;
+			padding: 5px;
+			
+		}
+		td p{
+			margin: 0;
+			text-indent: 0 !important;
+			text-align: left !important;
 		}
