@@ -192,6 +192,6 @@ int main()
 
 ## Довідники та додаткові матеріали
 
-[C++ List: How To Add, Assign, Delete List In C++](https://appdividend.com/2022/01/18/cpp-list/)
-[Списки в C++. Односвязный список](https://otus.ru/nest/post/911/)
-[Список list в С++: полный материал](https://codelessons.ru/cplusplus/spisok-list-v-s-polnyj-material.html)
+1. [C++ List: How To Add, Assign, Delete List In C++](https://appdividend.com/2022/01/18/cpp-list/)
+1. [Списки в C++. Односвязный список](https://otus.ru/nest/post/911/)
+1. [Список list в С++: полный материал](https://codelessons.ru/cplusplus/spisok-list-v-s-polnyj-material.html)
