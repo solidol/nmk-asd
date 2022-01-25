@@ -1,6 +1,6 @@
 [Перелік усіх робіт](README.md)
 
-# 02. Обробка зв'язного списку
+# Обробка зв'язного списку
 
 ## Мета роботи 
 
@@ -191,3 +191,7 @@ int main()
 4. Охарактеризуйте пріоритет операцій мови програмування С
 
 ## Довідники та додаткові матеріали
+
+[C++ List: How To Add, Assign, Delete List In C++](https://appdividend.com/2022/01/18/cpp-list/)
+[Списки в C++. Односвязный список](https://otus.ru/nest/post/911/)
+[Список list в С++: полный материал](https://codelessons.ru/cplusplus/spisok-list-v-s-polnyj-material.html)
