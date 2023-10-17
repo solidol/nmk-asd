@@ -285,8 +285,13 @@ int main()
 7. Який використувується оператор вибору для доступу до окремих членів структури?
 8. Як ініціалізувати структуру?
 
+
+1. [Зв'язний список на мові С](src/lab-03/lab-03-001.cpp)
+2. [Зв'язний список на мові С++ (структури та ООП)](src/lab-02/lab-02-002.cpp)
+
 ## Довідники та додаткові матеріали
 
 1. [C++ List: How To Add, Assign, Delete List In C++](https://appdividend.com/2022/01/18/cpp-list/)
-1. [Списки в C++. Односвязный список](https://otus.ru/nest/post/911/)
-1. [Список list в С++: полный материал](https://codelessons.ru/cplusplus/spisok-list-v-s-polnyj-material.html)
+2. [Структура даних зв’язаного списку на C ++ з ілюстрацією](https://uk.myservername.com/linked-list-data-structure-c-with-illustration)
+3. [Списки в C++. Односвязный список](https://otus.ru/nest/post/911/)
+4. [Список list в С++: полный материал](https://codelessons.ru/cplusplus/spisok-list-v-s-polnyj-material.html)

@@ -130,4 +130,11 @@ int main(){
 4. Що дозволяє з'ясувати оператор адресу **&**?
 5. Як присвоїти значення покажчику?
 
+1. [Приклад 1](src/lab-02/lab-02-001.cpp)
+2. [Приклад 2](src/lab-02/lab-02-002.cpp)
+
 ## Довідники та додаткові матеріали
+
+1. [Arrays - cplusplus.com](https://www.cplusplus.com/doc/tutorial/arrays/)
+1. [Arrays (C++) - Microsoft Docs](https://docs.microsoft.com/en-us/cpp/cpp/arrays-cpp?view=msvc-170)
+1. [Використання масивів](http://cpp.dp.ua/vykorystannya-masyviv/)
