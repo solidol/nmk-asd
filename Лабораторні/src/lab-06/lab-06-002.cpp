@@ -1,51 +1,62 @@
+// Програма пошуку в тексті за алгоритмом КМП
 #include <iostream>
-#include <ctime>
-#include <iomanip>
+#include <cstring>
+
 using namespace std;
- 
-void insertionSort(int *, int); // прототип функції сортування вставками
- 
-int main(int argc, char* argv[])
-{
-    srand(time(NULL));
-    setlocale(LC_ALL, "rus");
-    cout << " Введіть розмір масиву: ";
-    int size_array; // довжина масиву
-    cin >> size_array;
- 
-    int *sorted_array = new int [size_array]; // одновимірний динамічний масив
-    for (int counter = 0; counter < size_array; counter++)
-    {
-        sorted_array[counter] = rand() % 100; // заповнюємо масив випадковими числами
-        cout << setw(2) << sorted_array[counter] << "  "; // висновок масиву на екран
+
+// Генерує префікс-функцію для паттерну
+void computePrefixFunction(const char* pattern, int m, int* prefix) {
+    int k = 0;
+    prefix[0] = 0;
+
+    for (int q = 1; q < m; q++) {
+        while (k > 0 && pattern[q] != pattern[k]) {
+            k = prefix[k - 1];
+        }
+
+        if (pattern[q] == pattern[k]) {
+            k++;
+        }
+
+        prefix[q] = k;
     }
-    cout << "n";
- 
-    insertionSort(sorted_array, size_array); // виклик функції сортування вставками
- 
-    for (int counter = 0; counter < size_array; counter++)
-    {
-        cout << setw(2) << sorted_array[counter] << "  "; // друк відсортованого масиву
-    }
-    cout << "n";
-    delete [] sorted_array; // вивільняє пам'ять
-    system("pause");
-    return 0;
 }
- 
-void insertionSort(int *arrayPtr, int length) // сортування вставками
-{
-    int temp, // тимчасова змінна для зберігання значення елемента сортованого масиву
-        item; // індекс попереднього елемента
-    for (int counter = 1; counter < length; counter++)
-    {
-        temp = arrayPtr[counter]; // инициализируем тимчасову змінну поточним значенням елемента масиву
-        item = counter-1; // запам'ятовуємо індекс попереднього елемента масиву
-        while(item >= 0 && arrayPtr[item] > temp) // поки індекси не дорівнює 0 і попередній елемент масиву більше поточного
-        {
-            arrayPtr[item + 1] = arrayPtr[item]; // перестановка елементів масиву
-            arrayPtr[item] = temp;
-            item--;
+
+// Виконує пошук за алгоритмом KMP
+void searchKMP(const char* text, const char* pattern) {
+    int n = strlen(text);
+    int m = strlen(pattern);
+    int* prefix = new int[m];
+    computePrefixFunction(pattern, m, prefix);
+
+    int q = 0;
+
+    for (int i = 0; i < n; i++) {
+        while (q > 0 && pattern[q] != text[i]) {
+            q = prefix[q - 1];
+        }
+
+        if (pattern[q] == text[i]) {
+            q++;
+        }
+
+        if (q == m) {
+            cout << "Знайдено входження паттерну з позиції " << i - m + 1 << endl;
+            q = prefix[q - 1];
         }
     }
+
+    delete[] prefix;
+}
+
+int main() {
+    const char* text = "Це приклад тексту для пошуку паттерну в тексті. Паттерн - це";
+    const char* pattern = "Паттерн";
+
+    cout << "Текст: " << text << endl;
+    cout << "Паттерн: " << pattern << endl;
+
+    searchKMP(text, pattern);
+
+    return 0;
 }

@@ -1,51 +1,60 @@
+// Алгоритм Р. Боуера и Д. Мура
+
 #include <iostream>
-#include <ctime>
-#include <iomanip>
+#include <cstring>
+
 using namespace std;
- 
-void choicesSort(int*, int); // прототип функції сортування вибором
- 
-int main(int argc, char* argv[])
-{
-    srand(time(NULL));
-    setlocale(LC_ALL, "rus");
-    cout << " Введіть розмір масиву: ";
-    int size_array; // довжина масиву
-    cin >> size_array;
- 
-    int *sorted_array = new int [size_array]; // одновимірний динамічний масив
-    for (int counter = 0; counter < size_array; counter++)
-    {
-        sorted_array[counter] = rand() % 100; // заповнюємо масив випадковими числами
-        cout << setw(2) << sorted_array[counter] << "  "; // висновок масиву на екран
+
+const int NO_OF_CHARS = 256;
+
+// Функція для заповнення таблиці зсувів
+void computeBadCharHeuristic(const char* pattern, int m, int badchar[NO_OF_CHARS]) {
+    for (int i = 0; i < NO_OF_CHARS; i++) {
+        badchar[i] = -1;
     }
-    cout << "\n\n";
- 
-    choicesSort(sorted_array, size_array); // виклик функції сортування вибором
- 
-    for (int counter = 0; counter < size_array; counter++)
-    {
-        cout << setw(2) << sorted_array[counter] << "  "; // друк відсортованого масиву
+
+    for (int i = 0; i < m; i++) {
+        badchar[(int)pattern[i]] = i;
     }
-    cout << "\n";
-    delete [] sorted_array; // вивільняє пам'ять
-    system("pause");
-    return 0;
 }
- 
-void choicesSort(int* arrayPtr, int length_array) // сортування вибором
-{
-    for (int repeat_counter = 0; repeat_counter < length_array; repeat_counter++)
-    {
-        int temp = arrayPtr[0]; // тимчасова змінна для зберігання значення перестановки
-        for (int element_counter = repeat_counter + 1; element_counter < length_array; element_counter++)
-        {
-            if (arrayPtr[repeat_counter] > arrayPtr[element_counter])
-            {
-                temp = arrayPtr[repeat_counter];
-                arrayPtr[repeat_counter] = arrayPtr[element_counter];
-                arrayPtr[element_counter] = temp;
+
+// Функція для виконання пошуку за алгоритмом BM
+void searchBM(const char* text, const char* pattern) {
+    int n = strlen(text);
+    int m = strlen(pattern);
+    int badchar[NO_OF_CHARS];
+
+    computeBadCharHeuristic(pattern, m, badchar);
+
+    int s = 0;
+    while (s <= (n - m)) {
+        int j = m - 1;
+        while (j >= 0 && pattern[j] == text[s + j]) {
+            j--;
+        }
+
+        if (j < 0) {
+            cout << "Знайдено входження паттерну з позиції " << s << endl;
+
+            if (s + m < n) {
+                s += m - badchar[text[s + m]];
+            } else {
+                s += 1;
             }
+        } else {
+            s += max(1, j - badchar[text[s + j]]);
         }
     }
+}
+
+int main() {
+    const char* text = "Це приклад тексту для пошуку паттерну в тексті. Паттерн - це";
+    const char* pattern = "Паттерн";
+
+    cout << "Текст: " << text << endl;
+    cout << "Паттерн: " << pattern << endl;
+
+    searchBM(text, pattern);
+
+    return 0;
 }

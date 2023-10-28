@@ -1,53 +1,32 @@
+// Програма лінійного пошуку в тексті
 #include <iostream>
-#include <iomanip>
-#include <ctime>
+#include <string>
 
 using namespace std;
 
-void bubbleSort(int * , int); // прототип функції сортування бульбашкою
-
-int main(int argc, char * argv[]) {
-  srand(time(NULL));
-  setlocale(LC_ALL, "rus");
-  cout << " Введіть розмір масиву: ";
-  int size_array; // довжина масиву
-  cin >> size_array;
-
-  int * sorted_array = new int[size_array]; // одновимірний динамічний масив
-  for (int counter = 0; counter < size_array; counter++) {
-    sorted_array[counter] = rand() % 100; // заповнюємо масив випадковими числами
-    cout << setw(2) << sorted_array[counter] << "  "; // вивід масиву на екран
-  }
-  cout << "\n\n";
-
-  bubbleSort(sorted_array, size_array); // виклик функції сортування бульбашкою
-
-  for (int counter = 0; counter < size_array; counter++) {
-    cout << setw(2) << sorted_array[counter] << "  "; // друк відсортованого масиву
-  }
-  cout << "\n";
-
-  system("pause");
-  return 0;
+int linearSearch(const string& text, const string& target) {
+    for (int i = 0; i < text.length(); i++) {
+        if (text.substr(i, target.length()) == target) {
+            return i; // Повертаємо позицію першого входження слова
+        }
+    }
+    return -1; // Повертаємо -1, якщо слово не знайдено
 }
 
-void bubbleSort(int * arrayPtr, int length_array) // сортування бульбашкою
-{
-  int temp = 0; // тимчасова змінна для зберігання елемента масиву
-  bool exit = false; // больова змінна для виходу з циклу, якщо масив відсортований
-  while (!exit) // поки маса не впорядкований
-  {
-    exit = true;
-    for (int int_counter = 0; int_counter < (length_array - 1); int_counter++) // внутрішній цикл
-      // сортування бульбашкою по зростанню - знак >
-      // сортування бульбашкою по спадаючій - знак <
-      if (arrayPtr[int_counter] > arrayPtr[int_counter + 1]) // порівнюємо два сусідні елементи
-    {
-      // виконуємо перестановку елементів масиву
-      temp = arrayPtr[int_counter];
-      arrayPtr[int_counter] = arrayPtr[int_counter + 1];
-      arrayPtr[int_counter + 1] = temp;
-      exit = false; // на черговій ітерації була проведена перестановка елементів    
+int main() {
+    string text = "Це приклад тексту для лінійного пошуку слова.";
+    string word;
+
+    cout << "Введіть слово, яке потрібно знайти: ";
+    cin >> word;
+
+    int result = linearSearch(text, word);
+
+    if (result != -1) {
+        cout << "Слово '" << word << "' знайдено в тексті за позицією " << result << endl;
+    } else {
+        cout << "Слово '" << word << "' не знайдено в тексті." << endl;
     }
-  }
+
+    return 0;
 }
