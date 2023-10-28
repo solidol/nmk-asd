@@ -299,3 +299,4 @@ int main()
 2. [Структура даних зв’язаного списку на C ++ з ілюстрацією](https://uk.myservername.com/linked-list-data-structure-c-with-illustration)
 3. [Списки в C++. Односвязный список](https://otus.ru/nest/post/911/)
 4. [Список list в С++: полный материал](https://codelessons.ru/cplusplus/spisok-list-v-s-polnyj-material.html)
+
