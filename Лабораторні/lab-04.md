@@ -18,6 +18,7 @@
 
 3. Перевірити роботу програми та намалювати блок-схему алгоритму
 
+
 ```cpp
 #include <iostream>
 using namespace std;
