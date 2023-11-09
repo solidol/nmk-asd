@@ -139,6 +139,8 @@ int BinSearch(int *a, int key, int &b, int &e) {
 
 Деякий ефект дає використання так званого „золотого перерізу”. Це число ![](img/lec-11/11-003.png), що має властивість:
 
+$\varphi - 1=\frac{1}{\varphi}; \varphi^2 - \varphi - 1 = 0; \varphi_{1,2}=\frac{1\pm \sqrt{5}}{2}$
+
 ![](img/lec-11/11-004.png)
 
 Доданій корінь ![](img/lec-11/11-005.png) і є золотим перерізом.
