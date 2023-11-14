@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <chrono>
 
 using namespace std;
 
@@ -14,31 +15,33 @@ int linearSearch(const int arr[], int size, int target) {
 }
 
 int main() {
-    const int size = 1000000;  // Розмір масиву
+    const int size = 200000;  // Розмір масиву
     int arr[size];
 
     // Заповнення масиву випадковими числами
+    srand(time(NULL));
     for (int i = 0; i < size; ++i) {
-        arr[i] = rand() % 1000000;
+        arr[i] = rand() % 100000;
     }
 
     int target = arr[rand() % size];  // Випадковий елемент для пошуку
 
     // Вимірювання часу пошуку
-    clock_t start_time = clock();
+    auto start_time = chrono::high_resolution_clock::now();
     int result = linearSearch(arr, size, target);
-    clock_t end_time = clock();
+    auto end_time = chrono::high_resolution_clock::now();
 
     // Виведення результатів
     if (result != -1) {
         cout << "Елемент " << target << " знайдено за індексом " << result << endl;
-    } else {
+    }
+    else {
         cout << "Елемент " << target << " не знайдено в масиві." << endl;
     }
 
     // Виведення часу виконання пошуку
-    double elapsed_time = double(end_time - start_time) / CLOCKS_PER_SEC;
-    cout << "Час пошуку: " << elapsed_time << " секунд." << endl;
+    auto duration = chrono::duration_cast<chrono::microseconds>(end_time - start_time);
+    cout << "Час виконання: " << duration.count() << " мікросекунд." << endl;
 
     return 0;
 }
