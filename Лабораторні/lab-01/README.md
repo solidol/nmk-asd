@@ -18,6 +18,14 @@ int* p = &x;
 
 Для масиву `a` вирази `a[i]` і `*(a + i)` позначають той самий елемент. У масиві з `n` елементів допустимі індекси від `0` до `n - 1`. Пам’ять, отриману через `new[]`, звільняють через `delete[]`. У звичайних програмах частіше використовують `std::vector`; тут ручне керування пам’яттю є темою роботи.
 
+## Онлайн-документація
+
+- [Покажчики в C — cppreference](https://en.cppreference.com/c/language/pointer) (англійською): адресація, розіменування та зв’язок покажчиків із масивами.
+- [Покажчики в C++ — cppreference](https://en.cppreference.com/cpp/language/pointer) (англійською): оголошення покажчиків і `nullptr`.
+- [Масиви в C++ — cppreference](https://en.cppreference.com/cpp/language/array) (англійською): елементи масиву та перетворення масиву на покажчик.
+- [Оператор `new` у C++ — cppreference](https://en.cppreference.com/cpp/language/new) (англійською): виділення пам’яті для об’єктів і масивів.
+- [Оператор `delete` у C++ — cppreference](https://en.cppreference.com/cpp/language/delete) (англійською): звільнення пам’яті через `delete` і `delete[]`.
+
 ## Приклади
 
 ### 1. Зміна значення через покажчик
