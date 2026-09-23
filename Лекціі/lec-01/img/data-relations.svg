@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Типи зв’язків між сутностями</title>
+  <desc id="desc">Один примірник відповідає одному інвентарному запису. Одне видання має багато примірників. Читачі та примірники пов’язані багатьма видачами в різний час; це не одночасна видача одного примірника кільком читачам.</desc>
+  <rect width="900" height="560" rx="18" fill="#f8fafc"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#0f172a">
+    <text x="32" y="42" font-size="25" font-weight="700">Зв’язки у моделі бібліотеки</text>
+    <g fill="#e0f2fe" stroke="#0284c7">
+      <rect x="180" y="76" width="235" height="50" rx="9"/>
+      <rect x="560" y="76" width="305" height="50" rx="9"/>
+    </g>
+    <text x="32" y="109" font-size="23" font-weight="700">1 : 1</text>
+    <text x="297" y="108" text-anchor="middle" font-size="19">Примірник</text>
+    <text x="712" y="108" text-anchor="middle" font-size="19">Інвентарний запис</text>
+    <path d="M415 101H560" stroke="#475569" stroke-width="2"/>
+    <g fill="#dcfce7" stroke="#16a34a">
+      <rect x="180" y="215" width="235" height="50" rx="9"/>
+      <rect x="560" y="155" width="305" height="44" rx="9"/>
+      <rect x="560" y="218" width="305" height="44" rx="9"/>
+      <rect x="560" y="281" width="305" height="44" rx="9"/>
+    </g>
+    <text x="32" y="247" font-size="23" font-weight="700">1 : N</text>
+    <text x="297" y="247" text-anchor="middle" font-size="19">Видання</text>
+    <text x="712" y="184" text-anchor="middle" font-size="19">Примірник 1</text>
+    <text x="712" y="247" text-anchor="middle" font-size="19">Примірник 2</text>
+    <text x="712" y="310" text-anchor="middle" font-size="19">Примірник 3</text>
+    <path d="M415 240H475M475 177V303M475 177H560M475 240H560M475 303H560" fill="none" stroke="#475569" stroke-width="2"/>
+    <g fill="#fef3c7" stroke="#d97706">
+      <rect x="180" y="359" width="235" height="46" rx="9"/>
+      <rect x="180" y="435" width="235" height="46" rx="9"/>
+      <rect x="560" y="359" width="305" height="46" rx="9"/>
+      <rect x="560" y="435" width="305" height="46" rx="9"/>
+    </g>
+    <text x="32" y="428" font-size="23" font-weight="700">M : N</text>
+    <text x="297" y="389" text-anchor="middle" font-size="19">Читач А</text>
+    <text x="297" y="465" text-anchor="middle" font-size="19">Читач Б</text>
+    <text x="712" y="389" text-anchor="middle" font-size="19">Примірник 1</text>
+    <text x="712" y="465" text-anchor="middle" font-size="19">Примірник 2</text>
+    <path d="M415 382H560M415 382L560 458M415 458L560 382M415 458H560" fill="none" stroke="#475569" stroke-width="2"/>
+    <text x="180" y="512" font-size="17">Лінії — факти видачі в різний час, а не одночасне володіння.</text>
+    <text x="180" y="538" font-size="17">Дати та повернення зберігають в окремих записах видачі.</text>
+  </g>
+</svg>

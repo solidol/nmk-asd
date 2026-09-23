@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="590" viewBox="0 0 900 590" role="img" aria-labelledby="title desc">
+  <title id="title">Лінійні та нелінійні структури даних</title>
+  <desc id="desc">Масив має сусідні комірки з індексами. Список має послідовність вузлів, з’єднаних покажчиками. Дерево розгалужується від кореня. Граф може мати цикли.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#475569"/></marker></defs>
+  <rect width="900" height="590" rx="18" fill="#f8fafc"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#0f172a">
+    <text x="32" y="42" font-size="25" font-weight="700">Організація елементів і зв’язків</text>
+    <rect x="24" y="66" width="414" height="495" rx="12" fill="#e0f2fe"/>
+    <rect x="462" y="66" width="414" height="495" rx="12" fill="#dcfce7"/>
+    <text x="44" y="103" font-size="23" font-weight="700">Лінійні</text>
+    <text x="482" y="103" font-size="23" font-weight="700">Нелінійні</text>
+    <text x="44" y="147" font-size="20" font-weight="600">Масив</text>
+    <path d="M62 169H382V225H62ZM142 169V225M222 169V225M302 169V225" fill="#fff" stroke="#0284c7" stroke-width="2"/>
+    <g font-size="21" text-anchor="middle">
+      <text x="102" y="204">17</text><text x="182" y="204">24</text><text x="262" y="204">31</text><text x="342" y="204">42</text>
+    </g>
+    <g font-size="16" text-anchor="middle" fill="#475569">
+      <text x="102" y="249">0</text><text x="182" y="249">1</text><text x="262" y="249">2</text><text x="342" y="249">3</text>
+    </g>
+    <text x="44" y="281" font-size="17">Індекс визначає позицію.</text>
+    <text x="44" y="306" font-size="17">Елементи лежать послідовно.</text>
+    <text x="44" y="365" font-size="20" font-weight="600">Однозв’язний список</text>
+    <g fill="#fff" stroke="#0284c7" stroke-width="2">
+      <rect x="44" y="392" width="72" height="48" rx="6"/>
+      <rect x="151" y="392" width="72" height="48" rx="6"/>
+      <rect x="258" y="392" width="72" height="48" rx="6"/>
+    </g>
+    <g font-size="21" text-anchor="middle"><text x="80" y="423">17</text><text x="187" y="423">24</text><text x="294" y="423">31</text></g>
+    <g stroke="#475569" stroke-width="2" marker-end="url(#arrow)"><path d="M116 416H147"/><path d="M223 416H254"/><path d="M330 416H353"/></g>
+    <text x="359" y="422" font-size="16">∅</text>
+    <text x="44" y="480" font-size="17">Порядок задають покажчики.</text>
+    <text x="44" y="505" font-size="17">Вузли можуть бути далеко в пам’яті.</text>
+    <text x="44" y="535" font-size="16">∅ — кінець списку (nullptr).</text>
+    <text x="482" y="147" font-size="20" font-weight="600">Дерево</text>
+    <path d="M662 183L575 241M662 183L749 241" fill="none" stroke="#475569" stroke-width="2"/>
+    <g fill="#fff" stroke="#16a34a" stroke-width="2"><circle cx="662" cy="183" r="21"/><circle cx="575" cy="241" r="21"/><circle cx="749" cy="241" r="21"/></g>
+    <text x="482" y="290" font-size="17">Ієрархія: корінь і дочірні вузли.</text>
+    <text x="482" y="365" font-size="20" font-weight="600">Граф</text>
+    <path d="M573 400H749V466H573ZM573 400L749 466" fill="none" stroke="#475569" stroke-width="2"/>
+    <g fill="#fff" stroke="#16a34a" stroke-width="2"><circle cx="573" cy="400" r="18"/><circle cx="749" cy="400" r="18"/><circle cx="573" cy="466" r="18"/><circle cx="749" cy="466" r="18"/></g>
+    <text x="482" y="510" font-size="17">Загальні зв’язки між вершинами.</text>
+    <text x="482" y="535" font-size="17">Можливі цикли та кілька шляхів.</text>
+  </g>
+</svg>
