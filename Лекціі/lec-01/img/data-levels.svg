@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="490" viewBox="0 0 900 490" role="img" aria-labelledby="title desc">
   <title id="title">Три рівні організації даних</title>
   <desc id="desc">Логічна модель примірника книжки переходить у поля запису, а потім у подання байтами. Розміри полів і вирівнювання залежать від реалізації.</desc>
-  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#475569"/></marker></defs>
   <rect width="900" height="490" rx="18" fill="#f8fafc"/>
   <g font-family="Segoe UI, Arial, sans-serif" fill="#0f172a">
     <text x="32" y="42" font-size="25" font-weight="700">Від змісту до подання в пам’яті</text>
@@ -9,12 +8,12 @@
     <text x="52" y="99" font-size="21" font-weight="700">1. Логічна модель</text>
     <text x="52" y="129" font-size="19">Примірник книжки: номер 17, виданий читачеві.</text>
     <text x="52" y="153" font-size="17">Правило: кожний примірник має унікальний номер.</text>
-    <path d="M450 170V198" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M450 170V194" stroke="#475569" stroke-width="2"/><path d="M444 191L450 201L456 191Z" fill="#475569"/>
     <rect x="32" y="206" width="836" height="100" rx="12" fill="#dcfce7" stroke="#16a34a"/>
     <text x="52" y="239" font-size="21" font-weight="700">2. Подання мовою програмування</text>
     <text x="52" y="270" font-size="19">Запис із полями: номер — ціле; ознака видачі — логічне.</text>
     <text x="52" y="294" font-size="17">Типи C++: int та bool. Колекція записів: наприклад, масив.</text>
-    <path d="M450 308V336" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M450 308V332" stroke="#475569" stroke-width="2"/><path d="M444 329L450 339L456 329Z" fill="#475569"/>
     <rect x="32" y="344" width="836" height="116" rx="12" fill="#fef3c7" stroke="#d97706"/>
     <text x="52" y="378" font-size="21" font-weight="700">3. Фізичне подання</text>
     <text x="52" y="409" font-size="19">Байти полів і можливі проміжки вирівнювання.</text>

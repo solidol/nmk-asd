@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img" aria-labelledby="title desc">
+  <title id="title">Порядок зміни покажчиків</title>
+  <desc id="desc">Вставлення: спочатку node.next отримує старий p.next, потім p.next отримує node. Видалення: зберегти old, обійти його через p.next, потім delete old.</desc>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#245b85"/></marker></defs>
+  <rect width="960" height="460" rx="14" fill="#f5f8fc"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#18334b">
+    <text x="30" y="35" font-size="23" font-weight="600">Вставлення після p</text>
+    <g fill="#e0edf8" stroke="#245b85" stroke-width="2"><rect x="80" y="95" width="140" height="55" rx="6"/><rect x="410" y="95" width="140" height="55" rx="6" fill="#dbf1e7"/><rect x="740" y="95" width="140" height="55" rx="6"/></g>
+    <g font-size="21" text-anchor="middle"><text x="150" y="130">p</text><text x="480" y="130">node</text><text x="810" y="130">наступник</text></g>
+    <path d="M150 90V59H810V90" fill="none" stroke="#7b8794" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="450" y="53" font-size="16">старий зв’язок</text>
+    <g fill="none" stroke="#245b85" stroke-width="2.5" marker-end="url(#a)"><path d="M220 122H405"/><path d="M550 122H735"/></g>
+    <text x="250" y="109" font-size="19">② p→next</text><text x="568" y="109" font-size="19">① node→next</text>
+    <text x="80" y="186" font-size="18">① node→next = p→next</text><text x="510" y="186" font-size="18">② p→next = node</text>
+    <text x="30" y="246" font-size="23" font-weight="600">Видалення наступника p</text>
+    <g fill="#e0edf8" stroke="#245b85" stroke-width="2"><rect x="80" y="310" width="140" height="55" rx="6"/><rect x="410" y="310" width="140" height="55" rx="6" fill="#fbe6df"/><rect x="740" y="310" width="140" height="55" rx="6"/></g>
+    <g font-size="21" text-anchor="middle"><text x="150" y="345">p</text><text x="480" y="345">old</text><text x="810" y="345">наступник</text></g>
+    <g fill="none" stroke="#7b8794" stroke-width="2" stroke-dasharray="6 5"><path d="M220 337H410"/><path d="M550 337H740"/></g>
+    <path d="M150 305V275H810V305" fill="none" stroke="#245b85" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="362" y="270" font-size="18">② p→next = old→next</text>
+    <text x="80" y="402" font-size="18">① old = p→next</text><text x="420" y="402" font-size="18">③ delete old</text>
+    <text x="80" y="435" font-size="17">Пунктир — зв’язки до операції; суцільні стрілки — нові зв’язки.</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Двозв’язний і циклічний списки</title>
+  <desc id="desc">У двозв’язному списку next веде вправо, prev вліво, крайні зв’язки дорівнюють nullptr. В однозв’язному кільці останній next повертається до першого вузла.</desc>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#245b85"/></marker><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#9c4824"/></marker></defs>
+  <rect width="960" height="420" rx="14" fill="#f5f8fc"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#18334b">
+    <text x="30" y="35" font-size="23" font-weight="600">Двозв’язний список: перехід в обох напрямках</text>
+    <g fill="#e0edf8" stroke="#245b85" stroke-width="2"><rect x="180" y="85" width="130" height="60" rx="6"/><rect x="420" y="85" width="130" height="60" rx="6"/><rect x="660" y="85" width="130" height="60" rx="6"/></g>
+    <g font-size="21" text-anchor="middle"><text x="245" y="122">10</text><text x="485" y="122">20</text><text x="725" y="122">30</text><text x="83" y="134">nullptr</text><text x="879" y="104">nullptr</text></g>
+    <g fill="none" stroke="#245b85" stroke-width="2.5" marker-end="url(#a)"><path d="M310 99H415"/><path d="M550 99H655"/><path d="M790 99H832"/></g>
+    <g fill="none" stroke="#9c4824" stroke-width="2.5" marker-end="url(#b)"><path d="M420 131H315"/><path d="M660 131H555"/><path d="M180 131H130"/></g>
+    <text x="345" y="83" font-size="18">next</text><text x="345" y="162" font-size="18" fill="#9c4824">prev</text>
+    <text x="30" y="222" font-size="23" font-weight="600">Однозв’язне кільце: останній next веде до першого</text>
+    <g fill="#e0edf8" stroke="#245b85" stroke-width="2"><rect x="180" y="270" width="130" height="60" rx="6"/><rect x="420" y="270" width="130" height="60" rx="6"/><rect x="660" y="270" width="130" height="60" rx="6"/></g>
+    <g font-size="21" text-anchor="middle"><text x="245" y="307">10</text><text x="485" y="307">20</text><text x="725" y="307">30</text><text x="70" y="307">head</text></g>
+    <g fill="none" stroke="#245b85" stroke-width="2.5" marker-end="url(#a)"><path d="M104 300H175"/><path d="M310 300H415"/><path d="M550 300H655"/><path d="M790 300H835V365H245V335"/></g>
+    <text x="370" y="394" font-size="18">Завершення обходу — повернення до початку</text>
+  </g>
+</svg>

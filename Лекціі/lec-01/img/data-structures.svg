@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="590" viewBox="0 0 900 590" role="img" aria-labelledby="title desc">
   <title id="title">Лінійні та нелінійні структури даних</title>
   <desc id="desc">Масив має сусідні комірки з індексами. Список має послідовність вузлів, з’єднаних покажчиками. Дерево розгалужується від кореня. Граф може мати цикли.</desc>
-  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#475569"/></marker></defs>
   <rect width="900" height="590" rx="18" fill="#f8fafc"/>
   <g font-family="Segoe UI, Arial, sans-serif" fill="#0f172a">
     <text x="32" y="42" font-size="25" font-weight="700">Організація елементів і зв’язків</text>
@@ -26,7 +25,8 @@
       <rect x="258" y="392" width="72" height="48" rx="6"/>
     </g>
     <g font-size="21" text-anchor="middle"><text x="80" y="423">17</text><text x="187" y="423">24</text><text x="294" y="423">31</text></g>
-    <g stroke="#475569" stroke-width="2" marker-end="url(#arrow)"><path d="M116 416H147"/><path d="M223 416H254"/><path d="M330 416H353"/></g>
+    <g stroke="#475569" stroke-width="2"><path d="M116 416H147"/><path d="M223 416H254"/><path d="M330 416H353"/></g>
+    <path d="M139 411L147 416L139 421ZM246 411L254 416L246 421ZM345 411L353 416L345 421Z" fill="#475569"/>
     <text x="359" y="422" font-size="16">∅</text>
     <text x="44" y="480" font-size="17">Порядок задають покажчики.</text>
     <text x="44" y="505" font-size="17">Вузли можуть бути далеко в пам’яті.</text>
