@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+<title id="title">Мінімальна купа та масив</title><desc id="desc">Мінімальна купа та масив. Вузли та зв’язки підписано; пояснення наведено в лекції.</desc>
+<rect width="100%" height="100%" rx="16" fill="#f8fafc"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#172554">
+<text x="24" y="34" font-size="22">Мінімальна купа та масив</text>
+<line x1="398.8" y1="106.3" x2="291.2" y2="163.7" stroke="#64748b" stroke-width="2.5"/>
+<line x1="441.5" y1="105.7" x2="558.5" y2="164.3" stroke="#64748b" stroke-width="2.5"/>
+<line x1="253.6" y1="192.5" x2="206.4" y2="242.5" stroke="#64748b" stroke-width="2.5"/>
+<line x1="285.3" y1="193.5" x2="324.7" y2="241.5" stroke="#64748b" stroke-width="2.5"/>
+<line x1="564.7" y1="193.5" x2="525.3" y2="241.5" stroke="#64748b" stroke-width="2.5"/>
+<circle cx="420" cy="95" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="420" y="102" text-anchor="middle" font-size="19">2</text>
+<circle cx="270" cy="175" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="270" y="182" text-anchor="middle" font-size="19">5</text>
+<circle cx="580" cy="175" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="580" y="182" text-anchor="middle" font-size="19">3</text>
+<circle cx="190" cy="260" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="190" y="267" text-anchor="middle" font-size="19">9</text>
+<circle cx="340" cy="260" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="340" y="267" text-anchor="middle" font-size="19">7</text>
+<circle cx="510" cy="260" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="510" y="267" text-anchor="middle" font-size="19">8</text>
+<text x="80" y="335" font-size="17">Індекси:     0     1     2     3     4     5</text>
+<text x="80" y="365" font-size="17">Значення:  [2]   [5]   [3]   [9]   [7]   [8]</text>
+</g></svg>

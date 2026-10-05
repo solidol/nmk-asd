@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+<title id="title">B-дерево та B+ дерево: місце записів</title><desc id="desc">B-дерево та B+ дерево: місце записів. Вузли та зв’язки підписано; пояснення наведено в лекції.</desc>
+<rect width="100%" height="100%" rx="16" fill="#f8fafc"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#172554">
+<text x="24" y="34" font-size="22">B-дерево та B+ дерево: місце записів</text>
+<line x1="199.2" y1="138.1" x2="125.8" y2="221.9" stroke="#64748b" stroke-width="2.5"/>
+<line x1="230.8" y1="138.1" x2="304.2" y2="221.9" stroke="#64748b" stroke-width="2.5"/>
+<line x1="658.4" y1="137.3" x2="576.6" y2="222.7" stroke="#64748b" stroke-width="2.5"/>
+<line x1="691.2" y1="137.7" x2="768.8" y2="222.3" stroke="#64748b" stroke-width="2.5"/>
+<circle cx="215" cy="120" r="34" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="215" y="127" text-anchor="middle" font-size="19">20</text>
+<circle cx="110" cy="240" r="34" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="110" y="247" text-anchor="middle" font-size="19">5, 10</text>
+<circle cx="320" cy="240" r="34" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="320" y="247" text-anchor="middle" font-size="19">25, 30</text>
+<circle cx="675" cy="120" r="34" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="675" y="127" text-anchor="middle" font-size="19">20</text>
+<circle cx="560" cy="240" r="34" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="560" y="247" text-anchor="middle" font-size="19">5, 10</text>
+<circle cx="785" cy="240" r="34" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="785" y="247" text-anchor="middle" font-size="19">20, 25</text>
+<text x="120" y="75" font-size="17">B-дерево, t = 2</text>
+<text x="590" y="75" font-size="17">B+ дерево (схема)</text>
+<text x="180" y="315" font-size="17">Запис 20 — у корені</text>
+<text x="645" y="245" font-size="17">→</text>
+<text x="500" y="315" font-size="17">20 у корені — розділювач</text>
+<text x="500" y="350" font-size="17">Записи — у зв’язаних листках</text>
+</g></svg>
