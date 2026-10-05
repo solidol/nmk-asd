@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
-<title id="title">Рівні та піддерево загального дерева</title><desc id="desc">Рівні та піддерево загального дерева. Пояснення наведено в лекції.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 510" role="img" aria-labelledby="title desc">
+<title id="title">Обходи дерева з багатьма дітьми</title><desc id="desc">Обходи дерева з багатьма дітьми. Пояснення наведено в лекції.</desc>
 <rect width="1100" height="100%" rx="16" fill="#f8fafc"/>
-<rect x="50" y="165" width="265" height="195" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-dasharray="6 4"/>
 <g font-family="Segoe UI, Arial, sans-serif" fill="#172554">
-<text x="25" y="36" font-size="23">Рівні та піддерево загального дерева</text>
+<text x="25" y="36" font-size="23">Обходи дерева з багатьма дітьми</text>
 <line x1="526.8" y1="106.3" x2="203.2" y2="193.7" stroke="#64748b" stroke-width="2.5"/>
 <line x1="528.8" y1="111.2" x2="381.2" y2="188.8" stroke="#64748b" stroke-width="2.5"/>
 <line x1="550.0" y1="124.0" x2="550.0" y2="176.0" stroke="#64748b" stroke-width="2.5"/>
@@ -27,8 +26,7 @@
 <circle cx="490" cy="320" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="490" y="327" text-anchor="middle" font-size="20">J</text>
 <circle cx="610" cy="320" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="610" y="327" text-anchor="middle" font-size="20">K</text>
 <circle cx="920" cy="320" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="920" y="327" text-anchor="middle" font-size="20">L</text>
-<text x="25" y="100" font-size="18">Рівень 0</text>
-<text x="25" y="200" font-size="18">Рівень 1</text>
-<text x="25" y="275" font-size="18">Рівень 2</text>
-<text x="45" y="395" font-size="18">Піддерево B: B, G, H, I; h(B) = 1; h(A) = 2</text>
+<text x="35" y="390" font-size="18">Preorder:    A B G H I C D J K E F L</text>
+<text x="35" y="430" font-size="18">Postorder:  G H I B C J K D E L F A</text>
+<text x="35" y="470" font-size="18">BFS:           A B C D E F G H I J K L</text>
 </g></svg>

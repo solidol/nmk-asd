@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+<title id="title">Порядок дітей та структура дерева</title><desc id="desc">Порядок дітей та структура дерева. Пояснення наведено в лекції.</desc>
+<rect width="1100" height="100%" rx="16" fill="#f8fafc"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#172554">
+<text x="25" y="36" font-size="23">Порядок дітей та структура дерева</text>
+<line x1="241.7" y1="130.5" x2="118.3" y2="234.5" stroke="#64748b" stroke-width="2.5"/>
+<line x1="260.0" y1="139.0" x2="260.0" y2="226.0" stroke="#64748b" stroke-width="2.5"/>
+<line x1="278.3" y1="130.5" x2="401.7" y2="234.5" stroke="#64748b" stroke-width="2.5"/>
+<line x1="801.7" y1="130.5" x2="678.3" y2="234.5" stroke="#64748b" stroke-width="2.5"/>
+<line x1="820.0" y1="139.0" x2="820.0" y2="226.0" stroke="#64748b" stroke-width="2.5"/>
+<line x1="838.3" y1="130.5" x2="961.7" y2="234.5" stroke="#64748b" stroke-width="2.5"/>
+<circle cx="260" cy="115" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="260" y="122" text-anchor="middle" font-size="20">A</text>
+<circle cx="100" cy="250" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="100" y="257" text-anchor="middle" font-size="20">B</text>
+<circle cx="260" cy="250" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="260" y="257" text-anchor="middle" font-size="20">C</text>
+<circle cx="420" cy="250" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="420" y="257" text-anchor="middle" font-size="20">D</text>
+<circle cx="820" cy="115" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="820" y="122" text-anchor="middle" font-size="20">A</text>
+<circle cx="660" cy="250" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="660" y="257" text-anchor="middle" font-size="20">D</text>
+<circle cx="820" cy="250" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="820" y="257" text-anchor="middle" font-size="20">C</text>
+<circle cx="980" cy="250" r="23" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="980" y="257" text-anchor="middle" font-size="20">B</text>
+<text x="100" y="340" font-size="18">Послідовність: B, C, D</text>
+<text x="660" y="340" font-size="18">Послідовність: D, C, B</text>
+</g></svg>
