@@ -1,27 +1,92 @@
-
 #include <iostream>
-#include <vector>
+#include <sstream>
 #include <string>
-using namespace std;
 
-int levenshteinDistance(const string &s1, const string &s2) {
-    int n = s1.size(), m = s2.size();
-    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
+class BinarySearchTree {
+private:
+    struct Node {
+        int key;
+        Node* left;
+        Node* right;
+    };
 
-    for (int i = 0; i <= n; i++) dp[i][0] = i;
-    for (int j = 0; j <= m; j++) dp[0][j] = j;
+    Node* root;
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            int cost = (s1[i - 1] == s2[j - 1]) ? 0 : 1;
-            dp[i][j] = min({dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost});
+    Node* insertNode(Node* node, int key) {
+        if (node == nullptr) {
+            return new Node{key, nullptr, nullptr};
         }
+
+        if (key < node->key) {
+            node->left = insertNode(node->left, key);
+        } else if (key > node->key) {
+            node->right = insertNode(node->right, key);
+        }
+        return node;
     }
-    return dp[n][m];
-}
+
+    void clear(Node* node) {
+        if (node == nullptr) {
+            return;
+        }
+
+        clear(node->left);
+        clear(node->right);
+        delete node;
+    }
+
+public:
+    BinarySearchTree() : root(nullptr) {}
+
+    ~BinarySearchTree() {
+        clear(root);
+    }
+
+    BinarySearchTree(const BinarySearchTree&) = delete;
+    BinarySearchTree& operator=(const BinarySearchTree&) = delete;
+
+    void insert(int key) {
+        root = insertNode(root, key);
+    }
+
+    bool contains(int key) const {
+        const Node* current = root;
+        while (current != nullptr) {
+            if (key == current->key) {
+                return true;
+            }
+            if (key < current->key) {
+                current = current->left;
+            } else {
+                current = current->right;
+            }
+        }
+        return false;
+    }
+};
 
 int main() {
-    string a = "kitten", b = "sitting";
-    cout << "Levenshtein distance: " << levenshteinDistance(a, b) << endl;
+    BinarySearchTree tree;
+    const int keys[] = {8, 3, 10, 1, 6, 14, 4, 7, 13};
+    for (int key : keys) {
+        tree.insert(key);
+    }
+
+    std::cout << "Enter one integer to find: ";
+    std::string line;
+    std::getline(std::cin, line);
+    std::istringstream input(line);
+    int key;
+    char extra;
+    if (!(input >> key) || (input >> extra)) {
+        std::cerr << "Expected one integer.\n";
+        return 1;
+    }
+
+    if (tree.contains(key)) {
+        std::cout << "Found.\n";
+    } else {
+        std::cout << "Not found.\n";
+    }
     return 0;
 }
